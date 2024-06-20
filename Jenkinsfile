@@ -2,10 +2,7 @@ pipeline {
     agent any
     environment {
         // Using returnStdout
-        CC = """${sh(
-                returnStdout: true,
-                script: 'echo "clang"'
-            )}""" 
+        CC = 'clang'
         // Using returnStatus
         EXIT_STATUS = """${sh(
                 returnStatus: true,
@@ -35,7 +32,7 @@ pipeline {
                 //     for (int i = 0; i < browsers.size(); ++i) {
                 //         echo "Testing the ${browsers[i]} browser"
                 //     }
-                }
+                // }
             }
         }
         stage('Deploy') {
