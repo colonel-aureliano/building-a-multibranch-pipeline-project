@@ -3,11 +3,6 @@ pipeline {
     environment {
         // Using returnStdout
         CC = 'clang'
-        // Using returnStatus
-        EXIT_STATUS = """${sh(
-                returnStatus: true,
-                script: 'exit 1'
-            )}"""
     }
     stages {
         stage('Build') {
